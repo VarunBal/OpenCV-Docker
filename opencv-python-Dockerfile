@@ -42,11 +42,4 @@ WORKDIR $WORK_DIR
 
 RUN pip install numpy jupyter
 
-RUN apt-get install -y wget \
-    && wget "https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh" \
-    && chmod u+x Miniconda3-latest-Linux-x86_64.sh \
-    && ./Miniconda3-latest-Linux-x86_64.sh -b -p /usr/local -u \
-    && rm Miniconda3-latest-Linux-x86_64.sh \
-    && conda install -y xeus-cling -c conda-forge
-
 CMD ["jupyter","notebook","--ip","0.0.0.0","--allow-root","--no-browser"]
