@@ -9,3 +9,13 @@ services:
          - opencv_version=4.3.0
     ports:
       - "8888:8888"
+
+  opencv-python:
+    image: opencv-python
+    build:
+      context: .
+      dockerfile: opencv-python-Dockerfile
+      args:
+         - opencv_version=4.3.0
+    ports:
+      - "8080:8888"
